@@ -7,4 +7,69 @@
 }
 body {
   font-family: 'Lato', sans-serif;
+  background: black;
+  color: white;
+}
+.nav {
+  padding: 5px;
+  position: sticky;
+  top: 0;
+  z-index: 100000;
+}
+.nav.transparent {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgb(0, 0, 0, 0.7));
+}
+.nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.nav li {
+  list-style: none;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  a:hover {
+    color: linear-gradient(
+      45deg,
+      rgba(179, 238, 174, 1) 0%,
+      rgba(181, 135, 222, 1) 85%
+    );
+  }
+}
+.container {
+  margin: 20px auto;
+  padding: 30px;
+  /* background-color: grey; */
+}
+.currently-reading {
+  display: flex;
+  gap: 0px;
+  justify-content: space-around;
+  align-items: center;
+  img {
+    /* border: 1px solid black; */
+    border-radius: 5px;
+  }
+}
+.card-container {
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: center;
+}
+.card {
+  margin-bottom: 20px;
+  padding: 5px 5px;
+  text-align: center;
+  border-radius: 5px;
+  /* border: 1px solid pink; */
+  box-shadow: (5px 5px 10px rgba(255, 255, 255, 0.8));
+  h1 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 12px;
+  }
 }
