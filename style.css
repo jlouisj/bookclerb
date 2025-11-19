@@ -30,14 +30,18 @@ body {
     text-decoration: none;
     color: white;
   }
-  a:hover {
-    color: linear-gradient(
-      45deg,
-      rgba(179, 238, 174, 1) 0%,
-      rgba(181, 135, 222, 1) 85%
-    );
-  }
 }
+.nav a:hover,
+.nav a:active {
+  background: linear-gradient(
+    45deg,
+    rgba(179, 238, 174, 1),
+    rgba(181, 135, 222, 1)
+  );
+  color: transparent;
+  background-clip: text;
+}
+
 .container {
   margin: 20px auto;
   padding: 30px;
@@ -45,18 +49,34 @@ body {
 }
 .currently-reading {
   display: flex;
-  gap: 0px;
-  justify-content: space-around;
+  gap: 20px;
+  justify-content: center;
   align-items: center;
+  height: 400px;
   img {
-    /* border: 1px solid black; */
     border-radius: 5px;
   }
+}
+.title {
+  background: linear-gradient(
+    180deg,
+    rgb(48, 198, 209) 0%,
+    rgb(234, 207, 6) 100%
+  );
+  color: transparent;
+  background-clip: text;
+}
+.current-read-info h2 {
+  font-size: 3.5rem;
+}
+
+.current-read-info p {
+  font-size: 0.75rem;
 }
 .card-container {
   margin: 20px auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   align-content: center;
 }
 .card {
@@ -65,11 +85,67 @@ body {
   text-align: center;
   border-radius: 5px;
   /* border: 1px solid pink; */
-  box-shadow: (5px 5px 10px rgba(255, 255, 255, 0.8));
+  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.2);
   h1 {
     font-size: 18px;
   }
   p {
     font-size: 12px;
+  }
+  img {
+    height: 250px;
+    border-radius: 5px;
+  }
+}
+@media (max-width: 760px) {
+  .currently-reading {
+    display: flex;
+    gap: 10px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    img {
+      /* border: 1px solid black; */
+      border-radius: 5px;
+    }
+  }
+  .current-read-info {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .currently-reading .current-read-info p {
+    color: black;
+  }
+  .currently-reading .current-read-info h2 {
+    font-size: 2rem;
+  }
+  .card-container {
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: center;
+  }
+  .card {
+    margin-bottom: 20px;
+    padding: 5px 5px;
+    text-align: center;
+    border-radius: 5px;
+    /* border: 1px solid pink; */
+    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.2);
+    h1 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 12px;
+    }
+    img {
+      height: 100px;
+    }
   }
 }
